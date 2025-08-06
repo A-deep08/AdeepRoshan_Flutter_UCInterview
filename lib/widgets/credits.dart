@@ -11,7 +11,7 @@ class Credits extends StatelessWidget {
     super.key,
     required this.director,
     required this.writer,
-    this.actors, // Optional
+    this.actors, 
   });
 
   @override
@@ -19,7 +19,7 @@ class Credits extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Director Row
+        
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,7 +31,7 @@ class Credits extends StatelessWidget {
         ),
         SizedBox(height: 8),
 
-        // Writers Row
+        
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,7 +43,7 @@ class Credits extends StatelessWidget {
         ),
         SizedBox(height: 8),
 
-        // Actors Row — only if available
+        
         if (actors != null && actors!.trim().isNotEmpty)
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
