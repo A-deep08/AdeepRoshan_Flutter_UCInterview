@@ -10,53 +10,67 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
-          SizedBox(
-            height: 60,
-            child: Text(
-              'EchoTap',
-              style: GoogleFonts.inter(
-                color: const Color.fromARGB(255, 73, 82, 185),
-                fontSize: 32,
-                fontWeight: FontWeight.w900,
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/logbg.jpg'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 60,
+                child: Text(
+                  'EchoTap',
+                  style: GoogleFonts.inter(
+                    color: const Color.fromARGB(255, 73, 82, 185),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
 
-          SizedBox(height: 20),
-          Lottie.asset('assets/lotties/mouse click.json'),
-          SizedBox(height: 40),
-          FilledButton(
-            style: FilledButton.styleFrom(
-              minimumSize: Size(double.infinity, 40),
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return SignupPage();
-                  },
+              SizedBox(height: 20),
+              Lottie.asset('assets/lotties/mouse click.json'),
+              SizedBox(height: 40),
+              FilledButton(
+                style: FilledButton.styleFrom(
+                  minimumSize: Size(double.infinity, 40),
                 ),
-              );
-            },
-            child: Text('SignUp'),
-          ),
-          TextButton(
-            style: TextButton.styleFrom(minimumSize: Size(double.infinity, 40)),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return LoginPage();
-                  },
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignupPage();
+                      },
+                    ),
+                  );
+                },
+                child: Text('SignUp'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  minimumSize: Size(double.infinity, 40),
                 ),
-              );
-            },
-            child: Text('Login'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginPage();
+                      },
+                    ),
+                  );
+                },
+                child: Text('Login'),
+              ),
+            ],
           ),
         ],
       ),
